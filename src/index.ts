@@ -33,7 +33,9 @@ export const useStateBackedMachine = <
   const [actor, setActor] = useState<Actor<
     TEvent,
     TState,
-    TContext["public"] extends Record<string, unknown> ? TContext["public"] : {}
+    TContext["public"] extends Record<string, unknown>
+      ? TContext["public"]
+      : Record<string, unknown>
   > | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [inFlightEvents, setInFlightEvents] = useState(
