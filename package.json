@@ -1,0 +1,66 @@
+{
+  "name": "@statebacked/react",
+  "description": "React hooks for interacting with the StateBacked.dev backend as a service",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Adam Berger <adam@statebacked.dev>",
+  "scripts": {
+    "build": "tsc src/index.ts --strict --declaration --module commonjs --outDir dist/lib && tsc src/index.ts --strict --declaration --module esnext --outDir dist/es",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "prettier": "prettier --write *.{js,json,ts} src/"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "keywords": [
+    "statechart",
+    "state machine",
+    "scxml",
+    "state",
+    "finite state machine",
+    "state backed",
+    "backend as a service",
+    "paas"
+  ],
+  "main": "dist/lib/mod.js",
+  "module": "dist/es/mod.js",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/es/mod.d.ts",
+        "require": "./dist/lib/mod.d.ts"
+      },
+      "default": {
+        "import": "./dist/es/mod.js",
+        "require": "./dist/lib/mod.js"
+      }
+    }
+  },
+  "homepage": "https://statebacked.dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/statebacked/react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/statebacked/react/issues"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "@statebacked/client": ">=0.1.34"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@statebacked/client": ">=0.1.34",
+    "typescript": "^5.0.2"
+  }
+}
