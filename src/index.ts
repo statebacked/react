@@ -4,6 +4,7 @@ import {
   Event,
   Actor,
   errors,
+  Subscription,
 } from "@statebacked/client";
 import { useEffect, useState } from "react";
 
@@ -32,16 +33,16 @@ export const useStateBackedMachine = <
   const [actor, setActor] = useState<Actor<
     TEvent,
     TState,
-    TContext["public"]
+    TContext["public"] extends Record<string, unknown> ? TContext["public"] : {}
   > | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [inFlightEvents, setInFlightEvents] = useState(
-    new Set<Parameters<(typeof actor)["send"]>[0]>(),
+    new Set<Parameters<NonNullable<typeof actor>["send"]>[0]>(),
   );
 
   useEffect(() => {
     setActor(null);
-    let sub = null;
+    let sub: Subscription | null = null;
 
     client.machineInstances
       .getOrCreateActor<TEvent, TState, TContext>(

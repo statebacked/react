@@ -5,12 +5,13 @@
   "license": "MIT",
   "author": "Adam Berger <adam@statebacked.dev>",
   "scripts": {
-    "build": "tsc src/index.ts --strict --declaration --module commonjs --outDir dist/lib && tsc src/index.ts --strict --declaration --module esnext --outDir dist/es",
+    "build": "tsc --strict --declaration --module commonjs --sourceMap --outDir dist/lib && tsc --strict --declaration --module nodenext --moduleResolution nodenext --sourceMap --outDir dist/es && echo '{\"type\": \"commonjs\"}' > dist/lib/package.json",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prettier": "prettier --write *.{js,json,ts} src/"
   },
   "files": [
     "dist/**/*.js",
+    "dist/**/*.js.map",
     "dist/**/*.d.ts"
   ],
   "keywords": [
@@ -23,6 +24,7 @@
     "backend as a service",
     "paas"
   ],
+  "type": "module",
   "main": "dist/lib/mod.js",
   "module": "dist/es/mod.js",
   "exports": {
@@ -45,12 +47,13 @@
   "bugs": {
     "url": "https://github.com/statebacked/react/issues"
   },
-  "dependencies": {},
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "@statebacked/client": ">=0.1.34"
+    "@statebacked/client": ">=0.1.34",
+    "react": ">=16.8.0"
   },
   "devDependencies": {
+    "@statebacked/client": ">=0.1.34",
+    "@types/node": "^20.6.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
@@ -60,7 +63,6 @@
     "prettier": "^3.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@statebacked/client": ">=0.1.34",
     "typescript": "^5.0.2"
   }
 }
