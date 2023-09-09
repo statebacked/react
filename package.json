@@ -6,7 +6,7 @@
   "author": "Adam Berger <adam@statebacked.dev>",
   "scripts": {
     "build": "tsc --strict --declaration --module commonjs --sourceMap --outDir dist/lib && tsc --strict --declaration --module nodenext --moduleResolution nodenext --sourceMap --outDir dist/es && echo '{\"type\": \"commonjs\"}' > dist/lib/package.json",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prettier": "prettier --write *.{js,json,ts} src/"
   },
   "files": [
