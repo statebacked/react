@@ -74,7 +74,8 @@ export const useStateBackedMachine = <
           setInFlightEvents(new Set(actor.inFlightEvents));
         };
         setActor(actor);
-      });
+      })
+      .catch(setError);
 
     return () => {
       if (sub) {
