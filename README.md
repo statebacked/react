@@ -1,6 +1,6 @@
 # React hooks to interact with StateBacked.dev machine instances
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/statebacked/react/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/@statebacked/client.svg?style=flat)](https://www.npmjs.com/package/@statebacked/client) [![CI](https://github.com/statebacked/react/actions/workflows/ci.yaml/badge.svg)](https://github.com/statebacked/react/actions/workflows/ci.yaml) [![Docs](https://img.shields.io/badge/docs-statebacked-blue)](https://docs.statebacked.dev/) [![API Docs](https://img.shields.io/badge/docs-api-blue)](https://statebacked.github.io/react)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/statebacked/react/blob/main/LICENSE) [![npm version](https://img.shields.io/npm/v/@statebacked/client.svg?style=flat)](https://www.npmjs.com/package/@statebacked/client) [![CI](https://github.com/statebacked/react/actions/workflows/ci.yaml/badge.svg)](https://github.com/statebacked/react/actions/workflows/ci.yaml) [![Docs](https://img.shields.io/badge/docs-statebacked-blue)](https://docs.statebacked.dev/)
 
 [StateBacked.dev](https://statebacked.dev) runs state machines as your secure, scalable, serverless backend.
 
