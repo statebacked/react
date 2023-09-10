@@ -38,6 +38,7 @@ function MyReactComponent() {
       // name of a machine instance to connect to or create
       // you can create as many instances of each machine as you'd like
       instanceName: "your-instance",
+      // function to provide the initial context if we have to create the machine instance
       getInitialContext() {
         return {
           any: "initialContextForYourMachine"
