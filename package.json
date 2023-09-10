@@ -25,17 +25,17 @@
     "paas"
   ],
   "type": "module",
-  "main": "dist/lib/mod.js",
-  "module": "dist/es/mod.js",
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.js",
   "exports": {
     ".": {
       "types": {
-        "import": "./dist/es/mod.d.ts",
-        "require": "./dist/lib/mod.d.ts"
+        "import": "./dist/es/index.d.ts",
+        "require": "./dist/lib/index.d.ts"
       },
       "default": {
-        "import": "./dist/es/mod.js",
-        "require": "./dist/lib/mod.js"
+        "import": "./dist/es/index.js",
+        "require": "./dist/lib/index.js"
       }
     }
   },
