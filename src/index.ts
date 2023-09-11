@@ -26,7 +26,7 @@ export const useStateBackedMachine = <
     machineName: string;
     instanceName: string;
     machineVersionId?: string;
-    getInitialContext: () => Partial<TContext>;
+    getInitialContext?: () => Partial<TContext>;
     onEventSendingError?: (event: TEvent, error: Error) => void;
   },
 ) => {
@@ -51,7 +51,7 @@ export const useStateBackedMachine = <
         machineName,
         instanceName,
         () => ({
-          context: getInitialContext(),
+          context: getInitialContext?.(),
           machineVersionId,
         }),
       )
